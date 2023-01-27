@@ -4,9 +4,14 @@ fetch("navBar.html")
     .then(r => r.text())
     .then(fileContent => {
         const $header = document.querySelector("header")
-        if ($header) $header.innerHTML = fileContent
-        addNavBarListeners();
-        changeNavBarColor();
+        if (!$header) return
+
+        $header.innerHTML = fileContent
+        if ($header.classList.contains("transparent-effect")) {
+            addNavBarListeners();
+            changeNavBarColor();
+        }
+
     })
 
 const changeNavBarColor = () => {

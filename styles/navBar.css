@@ -2,9 +2,12 @@
 
     --navBar-height--: 50px;
     --navBar-logo-size: 30px;
-    --navBar-backgroundColor--: #393E46;
 }
 
+header:not(.transparent-effect) nav#navBar{
+    background-color: var(--theme-color--) !important;
+    color:white;
+}
 
 nav#navBar {
     position: fixed;
@@ -19,13 +22,13 @@ nav#navBar {
 }
 
 nav#navBar:not(.transparent) {
-    background-color: var(--navBar-backgroundColor--);
+    background-color: var(--theme-color--);
     color: white;
 
 }
 
 nav#navBar.transparent {
-    color: var(--navBar-backgroundColor--);
+    color: var(--theme-color--);
     
 }
 
