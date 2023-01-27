@@ -10,6 +10,8 @@ main{
     display: grid;
     grid-template-columns: minmax(200px,1fr) minmax(0,4fr);
     font-family: var(--text-font--);
+    max-width: 2000px;
+    margin: auto;
 }
 
 .sideBar{
@@ -60,17 +62,16 @@ h1,h2,h3,h4,h5,h6{
 .page-title{
     font-family: var(--title-font--);
     text-align: center;
-    font-size: 30px;
+    font-size: 40px;
 }
 
 .section-title{
     font-family: var(--title-font--);
-    font-size: 25px;
+    font-size: 30px;
     margin-bottom: 20px;
 }
 
 section{
-    min-height: 200vh;
     padding-top: calc(var(--navBar-height--) + 15px);
 }
 
@@ -78,7 +79,7 @@ section#lab2 .passwords-container{
     
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(325px, 1fr));
     gap: 20px;
     margin-top: 25px;
 }
@@ -91,9 +92,18 @@ section#lab2 .password-item{
     padding: 15px;
     background-color: rgb(240, 240, 240);
     border-radius: 10px;
-    box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.214);
+    box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.15);
+    overflow-x: auto;
+    animation: fadeIn 1s ease;
 }
 
 section#lab2 .level{
     font-weight: bold;
+}
+
+@keyframes fadeIn {
+    from{
+        opacity: 0;
+        transform: translateY(-10px);
+    }
 }
