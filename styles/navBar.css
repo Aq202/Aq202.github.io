@@ -1,0 +1,154 @@
+* {
+
+    --navBar-height--: 50px;
+    --navBar-logo-size: 30px;
+    --navBar-backgroundColor--: #393E46;
+}
+
+
+nav#navBar {
+    position: fixed;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: var(--navBar-height--);
+    width: 100%;
+    z-index: 9999;
+    transition: .3s all ease;
+}
+
+nav#navBar:not(.transparent) {
+    background-color: var(--navBar-backgroundColor--);
+    color: white;
+
+}
+
+nav#navBar.transparent {
+    color: var(--navBar-backgroundColor--);
+    
+}
+
+nav#navBar .logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    justify-content: flex-end;
+}
+
+
+nav#navBar .logo {
+    background-image: url("../images/logo.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: var(--navBar-logo-size);
+    height: var(--navBar-logo-size);
+    margin-left: 2.5vw;
+    animation: logo-animation 1s forwards;
+}
+
+nav#navBar .logo-name {
+    color: var(--navBar-color--);
+    font-family: monospace;
+    font-size: 20px;
+    font-weight: bold;
+    overflow: hidden;
+    border-right: .15em solid orange;
+    white-space: nowrap;
+    margin: 0 auto;
+    letter-spacing: .15em;
+    animation:
+        typing 2s steps(12, end) forwards,
+        blink-caret .75s step-end infinite;
+    animation-delay: 0.5s;
+    width: 170px;
+    visibility: hidden;
+}
+
+nav#navBar ul {
+    color: var(--navBar-color--);
+    font-weight: 550;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    list-style-type: none;
+    font-family: var(--title-font--);
+}
+
+nav#navBar ul li {
+    margin: 0 2vw 0 2vw;
+    user-select: none;
+    cursor: pointer;
+    transition: all .2s ease;
+}
+
+nav#navBar ul li:hover {
+    transform: translateY(-5px)
+}
+
+nav#navBar a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/*Animacion del logo*/
+@keyframes logo-animation {
+
+
+
+    from {
+        width: calc(var(--navBar-logo-size) + 5px);
+        height: calc(var(--navBar-logo-size) + 5px);
+    }
+}
+
+/*typing animation*/
+@keyframes typing {
+    from {
+        width: 0;
+    }
+
+    to {
+        visibility: visible;
+
+    }
+
+
+}
+
+/* Efecto de parpadeo */
+@keyframes blink-caret {
+    from, to {
+        border-color: transparent
+    }
+
+    50% {
+        border-color: orange;
+    }
+}
+
+
+
+@media only screen and (max-width:460px) {
+    * {
+        --navBar-height--: 70px;
+    }
+
+    nav#navBar {
+        flex-direction: column;
+        justify-content: space-evenly;
+
+    }
+
+    nav#navBar .logo {
+        margin-left: 0;
+    }
+
+
+    nav#navBar .logo-name {
+        display: none;
+    }
+
+}
