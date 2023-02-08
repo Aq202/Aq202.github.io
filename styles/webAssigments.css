@@ -94,16 +94,8 @@ section#lab2 .password-item{
     border-radius: 10px;
     box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.15);
     overflow-x: auto;
-    animation: fadeIn 1s ease;
 }
 
 section#lab2 .level{
     font-weight: bold;
-}
-
-@keyframes fadeIn {
-    from{
-        opacity: 0;
-        transform: translateY(-10px);
-    }
 }
